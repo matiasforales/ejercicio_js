@@ -1,5 +1,5 @@
-const user = "pepito"
-const pwdUser = "1234"
+const correo = "mail@mail.com"
+const pwdMail = "1234"
 
-export {user}
-export {pwdUser}
+export {correo}
+export {pwdMail}

@@ -1,16 +1,19 @@
 import {respuestaPositiva} from "./respuestaPositiva.js"
+import {respuestaContraseñaIncorrecta} from "./respuestaContraseñaIncorrecta.js"
+import {respuestaMailIncorrecto} from "./respuestaMailIncorrecto.js"
 import {respuestaNula} from "./respuestaNula.js"
-import {respuestaNegativa} from "./respuestaNegativa.js"
-import {user} from "../key/users_passwords.js"
-import {pwdUser} from "../key/users_passwords.js"
+import {correo} from "../key/users_passwords.js"
+import {pwdMail} from "../key/users_passwords.js"
 
-let usuario = prompt ("ingrese su usuario")
+let mail = prompt ("ingrese su e-mail")
 let validacion = prompt ("ingrese su password")
 
-if (usuario === user && validacion === pwdUser) {
+if (mail === correo && validacion === pwdMail) {
     document.body.innerHTML =respuestaPositiva
-} else if (!usuario || usuario === "" || !validacion || validacion === "") {
-    document.body.innerHTML =respuestaNula
+} else if (mail === correo && validacion !== pwdMail) {
+    alert(respuestaContraseñaIncorrecta)
+} else if (mail !== correo && validacion === pwdMail) {
+    alert(respuestaMailIncorrecto)
 } else {
-    document.body.innerHTML =respuestaNegativa
+    alert(respuestaNula)
 }
